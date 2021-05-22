@@ -2,5 +2,5 @@ package model;
 
 public enum KlijentFields {
 
-	IME, PASS, EMAIL;
+	IME, PREZIME, ADRESA, TELEFON, EMAIL, PASS;
 }

@@ -48,13 +48,28 @@ public class KlijentCrud {
 	}
 	
 	
-	public boolean promeniPassword(Klijent k, String noviPass) {
-		return promeni(k, noviPass, KlijentFields.PASS);
+	public boolean promeniPrezime(Klijent k, String novoPrezime) {
+		return promeni(k, novoPrezime, KlijentFields.PREZIME);
+	}
+	
+	
+	public boolean promeniAdresu(Klijent k, String novaAdresa) {
+		return promeni(k, novaAdresa, KlijentFields.ADRESA);
+	}
+	
+	
+	public boolean promeniTelefon(Klijent k, String noviTel) {
+		return promeni(k, noviTel, KlijentFields.TELEFON);
 	}
 	
 	
 	public boolean promeniEmail(Klijent k, String noviEmail) {
 		return promeni(k, noviEmail, KlijentFields.EMAIL);
+	}
+	
+	
+	public boolean promeniPassword(Klijent k, String noviPass) {
+		return promeni(k, noviPass, KlijentFields.PASS);
 	}
 	
 	
@@ -73,9 +88,12 @@ public class KlijentCrud {
 			Klijent tmp = em.merge(k);
 			
 			switch (field) {
-				case IME:	tmp.setImeKli(val);		break;
-				case PASS:	tmp.setPassKli(val);	break;
-				case EMAIL:	tmp.setEmailKli(val);	break;
+				case IME:		tmp.setImeKli(val);		break;
+				case PREZIME:	tmp.setPrzKli(val);		break;
+				case ADRESA:	tmp.setAdrKli(val);		break;
+				case TELEFON:	tmp.setEmailKli(val);	break;
+				case EMAIL:		tmp.setEmailKli(val);	break;
+				case PASS:		tmp.setPassKli(val);	break;
 				default:	
 			}
 			
