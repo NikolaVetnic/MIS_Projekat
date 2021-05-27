@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="mis_projekat" transaction-type="RESOURCE_LOCAL">
+		<class>model.Artikal</class>
+		<class>model.Dobavljac</class>
+		<class>model.Dostavljac</class>
+		<class>model.Klijent</class>
+		<class>model.Komentar</class>
+		<class>model.Nabavka</class>
+		<class>model.NabavkaArtikal</class>
+		<class>model.NabavkaArtikalPK</class>
+		<class>model.Narudzbina</class>
+		<class>model.Odsustvo</class>
+		<class>model.Racun</class>
+		<class>model.RacunArtikal</class>
+		<class>model.RacunArtikalPK</class>
+		<class>model.Radnik</class>
+		<class>model.RadnoMesto</class>
+		<class>model.Reklama</class>
+		<class>model.Rezervacija</class>
+		<class>model.Smena</class>
+		<class>model.SmenaSto</class>
+		<class>model.SmenaStoPK</class>
+		<class>model.Sto</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mis_projekat?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="r00t"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>
