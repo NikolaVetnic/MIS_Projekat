@@ -1,0 +1,644 @@
+format 224
+
+classinstance 128002 class_ref 141954 // klijent
+  drawing_mode actor  name ""   xyz 55 4 2005 life_line_z 2000
+classinstancecanvas 128130 classinstance_ref 141570 // kUlazF
+  xyz 156 4 2010 life_line_z 2000
+end
+classinstancecanvas 128258 classinstance_ref 141698 // kRegF
+  xyz 302 4 2015 life_line_z 2000
+end
+classinstancecanvas 128386 classinstance_ref 141826 // kK
+  xyz 1416 4 2020 life_line_z 2000
+end
+classinstancecanvas 128514 classinstance_ref 141954 // k
+  xyz 1797 4 2005 life_line_z 2000
+end
+classinstancecanvas 128642 classinstance_ref 142082 // kMeniF
+  xyz 489 4 2020 life_line_z 2000
+end
+classinstancecanvas 128770 classinstance_ref 142210 // rezF
+  xyz 639 4 2025 life_line_z 2000
+end
+classinstancecanvas 128898 classinstance_ref 142338 // iStoF
+  xyz 776 4 2030 life_line_z 2000
+end
+classinstancecanvas 129026 classinstance_ref 142466 // rezK
+  xyz 1529 4 2035 life_line_z 2000
+end
+classinstancecanvas 129154 classinstance_ref 142594 // s
+  xyz 1852 4 2010 life_line_z 2000
+end
+classinstancecanvas 129410 classinstance_ref 142850 // rUF
+  xyz 909 4 2035 life_line_z 2000
+end
+classinstancecanvas 129538 classinstance_ref 142978 // rMeniF
+  xyz 1027 4 2040 life_line_z 2000
+end
+classinstancecanvas 129666 classinstance_ref 143106 // rK
+  xyz 1681 4 2040 life_line_z 2000
+end
+classinstancecanvas 129922 classinstance_ref 143234 // rez
+  xyz 1902 4 2005 life_line_z 2000
+end
+classinstancecanvas 130050 classinstance_ref 143362 // rad
+  xyz 1996 4 2010 life_line_z 2000
+end
+classinstancecanvas 130178 classinstance_ref 143490 // pRF
+  xyz 1164 4 2045 life_line_z 2000
+end
+classinstancecanvas 130306 classinstance_ref 143618 // oRF
+  xyz 1280 4 2050 life_line_z 2000
+end
+classinstance 130434 class_ref 142594 // radnik
+  drawing_mode actor  name ""   xyz 114 4 2005 life_line_z 2000
+fragment 151042 "loop"
+  refer sequencediagram_ref 134530 // Seq1
+  form "imaJosRezervacija" xyzwh 33 1943 2000 2019 312
+end
+fragment 151170 "opt"
+  xyzwh 40 194 2020 1451 151
+end
+fragment 151298 "opt"
+  xyzwh 40 345 2020 1450 96
+end
+fragment 151426 "alt"
+  xyzwh 31 45 2025 1467 403
+end
+durationcanvas 130562 classinstance_ref 128002 // :klijent
+  xyzwh 69 89 2010 11 40
+end
+durationcanvas 130690 classinstance_ref 128130 // kUlazF:KlijentUlazForma
+  xyzwh 223 89 2010 11 25
+end
+durationcanvas 130946 classinstance_ref 128258 // kRegF:KlijentRegistracijaForma
+  xyzwh 390 103 2010 11 27
+end
+durationcanvas 131202 classinstance_ref 128514 // k:Klijent
+  xyzwh 1819 119 2010 11 25
+end
+durationcanvas 131458 classinstance_ref 128514 // k:Klijent
+  xyzwh 1819 146 2010 11 40
+end
+durationcanvas 131586 classinstance_ref 128258 // kRegF:KlijentRegistracijaForma
+  xyzwh 390 146 2010 11 25
+end
+durationcanvas 131842 classinstance_ref 128002 // :klijent
+  xyzwh 69 245 2010 11 40
+end
+durationcanvas 131970 classinstance_ref 128258 // kRegF:KlijentRegistracijaForma
+  xyzwh 390 245 2010 11 25
+end
+durationcanvas 132226 classinstance_ref 128386 // kK:KlijentKontroler
+  xyzwh 1467 258 2010 11 25
+end
+durationcanvas 132482 classinstance_ref 128386 // kK:KlijentKontroler
+  xyzwh 1467 285 2010 11 40
+end
+durationcanvas 132610 classinstance_ref 128258 // kRegF:KlijentRegistracijaForma
+  xyzwh 390 285 2010 11 29
+end
+durationcanvas 132866 classinstance_ref 128130 // kUlazF:KlijentUlazForma
+  xyzwh 223 303 2010 11 25
+end
+durationcanvas 133122 classinstance_ref 128002 // :klijent
+  xyzwh 69 393 2010 11 40
+end
+durationcanvas 133250 classinstance_ref 128258 // kRegF:KlijentRegistracijaForma
+  xyzwh 390 393 2010 11 25
+end
+durationcanvas 133506 classinstance_ref 128002 // :klijent
+  xyzwh 69 509 2010 11 40
+end
+durationcanvas 133634 classinstance_ref 128130 // kUlazF:KlijentUlazForma
+  xyzwh 223 509 2010 11 30
+end
+durationcanvas 133890 classinstance_ref 128386 // kK:KlijentKontroler
+  xyzwh 1467 528 2010 11 29
+end
+durationcanvas 134146 classinstance_ref 128514 // k:Klijent
+  xyzwh 1819 546 2010 11 25
+end
+durationcanvas 134402 classinstance_ref 128514 // k:Klijent
+  xyzwh 1819 573 2010 11 40
+end
+durationcanvas 134530 classinstance_ref 128386 // kK:KlijentKontroler
+  xyzwh 1467 573 2010 11 29
+end
+durationcanvas 134786 classinstance_ref 128130 // kUlazF:KlijentUlazForma
+  xyzwh 223 591 2010 11 25
+end
+durationcanvas 135042 classinstance_ref 128130 // kUlazF:KlijentUlazForma
+  xyzwh 223 618 2010 11 40
+end
+durationcanvas 135170 classinstance_ref 128642 // kMeniF:KlijentMeniForma
+  xyzwh 558 618 2010 11 25
+end
+durationcanvas 135426 classinstance_ref 128002 // :klijent
+  xyzwh 69 709 2010 11 40
+end
+durationcanvas 135554 classinstance_ref 128642 // kMeniF:KlijentMeniForma
+  xyzwh 558 709 2010 11 28
+end
+durationcanvas 135810 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 726 2010 11 28
+end
+durationcanvas 136450 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 743 2010 11 25
+end
+durationcanvas 136706 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 770 2010 11 40
+end
+durationcanvas 136834 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 770 2010 11 25
+end
+durationcanvas 137090 classinstance_ref 128002 // :klijent
+  xyzwh 69 838 2010 11 40
+end
+durationcanvas 137218 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 838 2010 11 30
+end
+durationcanvas 137474 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 857 2010 11 25
+end
+durationcanvas 137730 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 884 2010 11 40
+end
+durationcanvas 137858 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 884 2010 11 25
+end
+durationcanvas 138114 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 1016 2010 11 40
+end
+durationcanvas 138242 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 1016 2010 11 28
+end
+durationcanvas 138498 classinstance_ref 129154 // s:Sto
+  xyzwh 1871 1033 2010 11 25
+end
+durationcanvas 138754 classinstance_ref 129154 // s:Sto
+  xyzwh 1871 1060 2010 11 40
+end
+durationcanvas 138882 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 1060 2010 11 31
+end
+durationcanvas 139394 classinstance_ref 128898 // iStoF:IzborStolaForma
+  xyzwh 837 1080 2010 11 25
+end
+durationcanvas 139650 classinstance_ref 128002 // :klijent
+  xyzwh 69 989 2010 11 40
+end
+durationcanvas 139778 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 989 2010 11 25
+end
+durationcanvas 140034 classinstance_ref 128002 // :klijent
+  xyzwh 69 1173 2010 11 40
+end
+durationcanvas 140162 classinstance_ref 128898 // iStoF:IzborStolaForma
+  xyzwh 837 1173 2010 11 28
+end
+durationcanvas 140418 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 1190 2010 11 25
+end
+durationcanvas 140674 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 1217 2010 11 40
+end
+durationcanvas 140802 classinstance_ref 128898 // iStoF:IzborStolaForma
+  xyzwh 837 1217 2010 11 30
+end
+durationcanvas 141058 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 1236 2010 11 25
+end
+durationcanvas 141314 classinstance_ref 128002 // :klijent
+  xyzwh 69 1342 2010 11 40
+end
+durationcanvas 141442 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 1342 2010 11 25
+end
+durationcanvas 141698 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 1356 2010 11 25
+end
+durationcanvas 141954 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 1383 2010 11 40
+end
+durationcanvas 142082 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 1383 2010 11 25
+end
+durationcanvas 142338 classinstance_ref 128002 // :klijent
+  xyzwh 69 1458 2010 11 40
+end
+durationcanvas 142466 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 1458 2010 11 27
+end
+durationcanvas 142722 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 1474 2010 11 25
+end
+durationcanvas 142978 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 1501 2010 11 40
+end
+durationcanvas 143106 classinstance_ref 128770 // rezF:RezervacijaForma
+  xyzwh 702 1501 2010 11 25
+end
+durationcanvas 144002 classinstance_ref 130050 // rad:Radnik
+  xyzwh 2026 1669 2010 11 40
+end
+durationcanvas 144130 classinstance_ref 129666 // rK:RadnikKontroler
+  xyzwh 1733 1669 2010 11 25
+end
+durationcanvas 144386 classinstance_ref 130434 // :radnik
+  xyzwh 129 1600 2010 11 40
+end
+durationcanvas 144514 classinstance_ref 129410 // rUF:RadUlazForma
+  xyzwh 962 1601 2010 11 34
+end
+durationcanvas 145282 classinstance_ref 129666 // rK:RadnikKontroler
+  xyzwh 1733 1624 2010 11 31
+end
+durationcanvas 145538 classinstance_ref 130050 // rad:Radnik
+  xyzwh 2026 1642 2010 11 25
+end
+durationcanvas 145794 classinstance_ref 129410 // rUF:RadUlazForma
+  xyzwh 962 1681 2010 11 25
+end
+durationcanvas 146050 classinstance_ref 129410 // rUF:RadUlazForma
+  xyzwh 962 1708 2010 11 40
+end
+durationcanvas 146178 classinstance_ref 129538 // rMeniF:RadMeniForma
+  xyzwh 1090 1708 2010 11 25
+end
+durationcanvas 146434 classinstance_ref 130434 // :radnik
+  xyzwh 129 1789 2010 11 40
+end
+durationcanvas 146562 classinstance_ref 129538 // rMeniF:RadMeniForma
+  xyzwh 1090 1789 2010 11 29
+end
+durationcanvas 146818 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 1807 2010 11 30
+end
+durationcanvas 147074 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 1826 2010 11 25
+end
+durationcanvas 147330 classinstance_ref 129922 // rez:Rezervacija
+  xyzwh 1943 1853 2010 11 40
+end
+durationcanvas 147458 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 1853 2010 11 30
+end
+durationcanvas 147714 classinstance_ref 130178 // pRF:PrikRezForma
+  xyzwh 1216 1872 2010 11 25
+end
+durationcanvas 147970 classinstance_ref 130434 // :radnik
+  xyzwh 129 2034 2010 11 40
+end
+durationcanvas 148098 classinstance_ref 130178 // pRF:PrikRezForma
+  xyzwh 1216 2034 2010 11 25
+end
+durationcanvas 148354 classinstance_ref 130306 // oRF:ObradaRezForma
+  xyzwh 1342 2047 2010 11 28
+end
+durationcanvas 148866 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 2064 2010 11 25
+end
+durationcanvas 149506 classinstance_ref 129026 // rezK:RezervacijaKontroler
+  xyzwh 1599 2091 2010 11 40
+end
+durationcanvas 149634 classinstance_ref 130178 // pRF:PrikRezForma
+  xyzwh 1216 2091 2010 11 25
+end
+durationcanvas 149890 classinstance_ref 130434 // :radnik
+  xyzwh 129 2174 2010 11 40
+end
+durationcanvas 150018 classinstance_ref 130178 // pRF:PrikRezForma
+  xyzwh 1216 2174 2010 11 25
+end
+durationcanvas 150658 classinstance_ref 130178 // pRF:PrikRezForma
+  xyzwh 1216 2201 2010 11 40
+end
+durationcanvas 150786 classinstance_ref 129538 // rMeniF:RadMeniForma
+  xyzwh 1090 2201 2010 11 25
+end
+msg 130818 synchronous
+  from durationcanvas_ref 130562
+  to durationcanvas_ref 130690
+  yz 89 2015 msg operation_ref 142338 // "registrujKlijenta()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 104 74
+msg 131074 synchronous
+  from durationcanvas_ref 130690
+  to durationcanvas_ref 130946
+  yz 103 2020 explicitmsg "otvori()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 294 88
+msg 131330 synchronous
+  from durationcanvas_ref 130946
+  to durationcanvas_ref 131202
+  yz 119 2015 explicitmsg "create()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1089 104
+msg 131714 return
+  from durationcanvas_ref 131458
+  to durationcanvas_ref 131586
+  yz 146 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1099 131
+msg 132098 synchronous
+  from durationcanvas_ref 131842
+  to durationcanvas_ref 131970
+  yz 245 2015 msg operation_ref 141250 // "sacuvajKlijenta()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 190 230
+msg 132354 synchronous
+  from durationcanvas_ref 131970
+  to durationcanvas_ref 132226
+  yz 258 2015 msg operation_ref 148034 // "dodajKlijenta(in k : Klijent) : bool"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 894 243
+msg 132738 return
+  from durationcanvas_ref 132482
+  to durationcanvas_ref 132610
+  yz 285 2015 explicitmsg "bool"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 922 270
+msg 132994 return
+  from durationcanvas_ref 132610
+  to durationcanvas_ref 132866
+  yz 303 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 301 288
+msg 133378 synchronous
+  from durationcanvas_ref 133122
+  to durationcanvas_ref 133250
+  yz 393 2015 msg operation_ref 141378 // "odustani()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 207 378
+msg 133762 synchronous
+  from durationcanvas_ref 133506
+  to durationcanvas_ref 133634
+  yz 509 2015 msg operation_ref 142466 // "ulogujKlijenta()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 110 494
+msg 134018 synchronous
+  from durationcanvas_ref 133634
+  to durationcanvas_ref 133890
+  yz 528 2020 msg operation_ref 147906 // "ucitajKlijenta(in ime : string, in pass : string) : Klijent [1]"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 811 513
+msg 134274 synchronous
+  from durationcanvas_ref 133890
+  to durationcanvas_ref 134146
+  yz 546 2015 explicitmsg "create()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1627 531
+msg 134658 return
+  from durationcanvas_ref 134402
+  to durationcanvas_ref 134530
+  yz 573 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1637 558
+msg 134914 return
+  from durationcanvas_ref 134530
+  to durationcanvas_ref 134786
+  yz 591 2015 explicitmsg "klijent"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 834 576
+msg 135298 synchronous
+  from durationcanvas_ref 135042
+  to durationcanvas_ref 135170
+  yz 618 2015 explicitmsg "otvori()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 378 603
+msg 135682 synchronous
+  from durationcanvas_ref 135426
+  to durationcanvas_ref 135554
+  yz 709 2015 msg operation_ref 142850 // "rezervisiSto()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 284 694
+msg 135938 synchronous
+  from durationcanvas_ref 135554
+  to durationcanvas_ref 135810
+  yz 726 2020 explicitmsg "otvori()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 617 711
+msg 136578 synchronous
+  from durationcanvas_ref 135810
+  to durationcanvas_ref 136450
+  yz 743 2025 explicitmsg "create()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1307 728
+msg 136962 return
+  from durationcanvas_ref 136706
+  to durationcanvas_ref 136834
+  yz 770 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1317 755
+msg 137346 synchronous
+  from durationcanvas_ref 137090
+  to durationcanvas_ref 137218
+  yz 838 2015 msg operation_ref 143362 // "unesiDatum()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 353 823
+msg 137602 synchronous
+  from durationcanvas_ref 137218
+  to durationcanvas_ref 137474
+  yz 857 2020 msg operation_ref 143874 // "dodajDatum(in d : Datum)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1290 842
+msg 137986 return
+  from durationcanvas_ref 137730
+  to durationcanvas_ref 137858
+  yz 884 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1317 869
+msg 138370 synchronous
+  from durationcanvas_ref 138114
+  to durationcanvas_ref 138242
+  yz 1016 2015 msg operation_ref 143618 // "ucitajSveStolove(in d : Date) : Sto [*]"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1108 1001
+msg 138626 synchronous
+  from durationcanvas_ref 138242
+  to durationcanvas_ref 138498
+  yz 1033 2020 explicitmsg "create()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1719 1018
+msg 139010 return
+  from durationcanvas_ref 138754
+  to durationcanvas_ref 138882
+  yz 1060 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1729 1045
+msg 139522 return
+  from durationcanvas_ref 138882
+  to durationcanvas_ref 139394
+  yz 1080 2020 explicitmsg "stolovi"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1206 1065
+msg 139906 synchronous
+  from durationcanvas_ref 139650
+  to durationcanvas_ref 139778
+  yz 989 2015 msg operation_ref 167874 // "izaberiSto()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 360 974
+msg 140290 synchronous
+  from durationcanvas_ref 140034
+  to durationcanvas_ref 140162
+  yz 1173 2015 msg operation_ref 142978 // "dodajSto()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 430 1158
+msg 140546 synchronous
+  from durationcanvas_ref 140162
+  to durationcanvas_ref 140418
+  yz 1190 2020 msg operation_ref 144002 // "dodajSto(in s : Sto)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1367 1175
+msg 140930 return
+  from durationcanvas_ref 140674
+  to durationcanvas_ref 140802
+  yz 1217 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1384 1202
+msg 141186 return
+  from durationcanvas_ref 140802
+  to durationcanvas_ref 141058
+  yz 1236 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 764 1221
+msg 141570 synchronous
+  from durationcanvas_ref 141314
+  to durationcanvas_ref 141442
+  yz 1342 2015 msg operation_ref 143490 // "unesiOpis()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 359 1327
+msg 141826 synchronous
+  from durationcanvas_ref 141442
+  to durationcanvas_ref 141698
+  yz 1356 2020 msg operation_ref 144130 // "dodajOpis(in opis : string)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1296 1341
+msg 142210 return
+  from durationcanvas_ref 141954
+  to durationcanvas_ref 142082
+  yz 1383 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1317 1368
+msg 142594 synchronous
+  from durationcanvas_ref 142338
+  to durationcanvas_ref 142466
+  yz 1458 2015 msg operation_ref 168002 // "sacuvajRezervaciju()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 335 1443
+msg 142850 synchronous
+  from durationcanvas_ref 142466
+  to durationcanvas_ref 142722
+  yz 1474 2015 msg operation_ref 143746 // "dodajRezervaciju(in r : Rezervacija) : bool"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1105 1459
+msg 143234 return
+  from durationcanvas_ref 142978
+  to durationcanvas_ref 143106
+  yz 1501 2015 explicitmsg "bool"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1144 1486
+msg 144258 return
+  from durationcanvas_ref 144002
+  to durationcanvas_ref 144130
+  yz 1669 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1874 1654
+msg 144642 synchronous
+  from durationcanvas_ref 144386
+  to durationcanvas_ref 144514
+  yz 1601 3005 msg operation_ref 144258 // "ulogujRadnika()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 507 1586
+msg 145410 synchronous
+  from durationcanvas_ref 144514
+  to durationcanvas_ref 145282
+  yz 1624 2015 msg operation_ref 128097 // "ucitajRadnika(in ime : string, in pass : string) : Radnik [1]"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1332 1609
+msg 145666 synchronous
+  from durationcanvas_ref 145282
+  to durationcanvas_ref 145538
+  yz 1644 2020 explicitmsg "create()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1864 1629
+msg 145922 return
+  from durationcanvas_ref 144130
+  to durationcanvas_ref 145794
+  yz 1681 2020 explicitmsg "radnik"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1336 1666
+msg 146306 synchronous
+  from durationcanvas_ref 146050
+  to durationcanvas_ref 146178
+  yz 1708 2015 explicitmsg "otvori()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1013 1693
+msg 146690 synchronous
+  from durationcanvas_ref 146434
+  to durationcanvas_ref 146562
+  yz 1789 2015 msg operation_ref 144386 // "prikaziSveRezervacije()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 552 1774
+msg 146946 synchronous
+  from durationcanvas_ref 146562
+  to durationcanvas_ref 146818
+  yz 1807 2020 msg operation_ref 145026 // "ucitajSveRezervacije() : Rezervacija [*]"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1290 1792
+msg 147202 synchronous
+  from durationcanvas_ref 146818
+  to durationcanvas_ref 147074
+  yz 1826 2015 explicitmsg "create()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1755 1811
+msg 147586 return
+  from durationcanvas_ref 147330
+  to durationcanvas_ref 147458
+  yz 1853 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1765 1838
+msg 147842 return
+  from durationcanvas_ref 147458
+  to durationcanvas_ref 147714
+  yz 1872 2020 explicitmsg "rezervacije"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1384 1857
+msg 148226 synchronous
+  from durationcanvas_ref 147970
+  to durationcanvas_ref 148098
+  yz 2034 2015 msg operation_ref 144514 // "prikaziRezervaciju()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 625 2019
+msg 148482 synchronous
+  from durationcanvas_ref 148098
+  to durationcanvas_ref 148354
+  yz 2047 2020 msg operation_ref 144770 // "odobriRezervaciju()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1231 2032
+msg 148994 synchronous
+  from durationcanvas_ref 148354
+  to durationcanvas_ref 148866
+  yz 2064 2025 msg operation_ref 145154 // "azurirajRezervaciju(in r : Rezervacija) : bool"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1421 2049
+msg 149762 return
+  from durationcanvas_ref 149506
+  to durationcanvas_ref 149634
+  yz 2091 2015 explicitmsg "bool"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1401 2076
+msg 150146 synchronous
+  from durationcanvas_ref 149890
+  to durationcanvas_ref 150018
+  yz 2174 2015 msg operation_ref 144642 // "odustani()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 650 2159
+msg 150914 return
+  from durationcanvas_ref 150658
+  to durationcanvas_ref 150786
+  yz 2201 2015 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1147 2186
+end

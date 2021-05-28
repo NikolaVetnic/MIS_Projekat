@@ -1,0 +1,10 @@
+window_sizes 1920 1057 226 1689 909 101
+
+show_stereotypes
+selected classdiagram_ref 128194 // DijagramKlasa
+open
+  class_ref 169922 // NarudzbinaKontroler
+  class_ref 141570 // KlijentMeniForma
+  class_ref 142210 // RadMeniForma
+end
+end

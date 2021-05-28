@@ -1,0 +1,23 @@
+window_sizes 1855 1056 434 1415 899 104
+cleanlooks_style
+diagrams
+  active  sequencediagram_ref 128097 // DijagramSekvenci1
+    1415 899 90 A1 0 0
+  sequencediagram_ref 128225 // DijagramSekvenci2
+    142 135 100 A2 0 0
+  sequencediagram_ref 135009 // DijagramSekvenci3
+    1132 719 80 A1 648 0
+  classdiagram_ref 128194 // DijagramKlasa
+    1132 719 100 A1 576 217
+end
+show_stereotypes
+selected sequencediagram_ref 128097 // DijagramSekvenci1
+open
+  class_ref 156482 // RezervacijaForma
+  class_ref 163138 // RadnikForma
+  class_ref 169666 // NarudzbinaForma
+  class_ref 169922 // NarudzbinaKontroler
+  class_ref 176578 // NabavkaForma
+  class_ref 128225 // RadnikKontroler
+end
+end

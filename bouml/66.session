@@ -1,0 +1,22 @@
+window_sizes 1440 855 337 1097 739 64
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128194 // DijagramKlasa
+    1097 739 60 A1 0 0
+end
+show_stereotypes
+selected operation_ref 182850 // azurirajNarudzbinu
+open
+  class_ref 136770 // KlijentForma
+  class_ref 136898 // KlijentRegistracijaForma
+  class_ref 143426 // KlijentKontroler
+  class_ref 149954 // StoKontroler
+  class_ref 156482 // RezervacijaForma
+  class_ref 163010 // StoForma
+  class_ref 163138 // RadnikForma
+  class_ref 169666 // NarudzbinaForma
+  class_ref 169794 // ArtikalForma
+  class_ref 169922 // NarudzbinaKontroler
+  class_ref 170050 // NeregKlijentForma
+end
+end
