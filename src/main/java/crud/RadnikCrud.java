@@ -22,4 +22,18 @@ public class RadnikCrud {
 		
 		return list;
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public Radnik pronadjiRadnika(int id) {
+		
+		EntityManager em = PersistenceUtil.getEntityManager();
+		
+		String query = "select r from Radnik r";	// HQL->SQL : SELECT * FROM Student;
+		List<Radnik> list = em.createQuery(query).getResultList();
+		
+		em.close();
+		
+		return list.stream().filter(r -> r.getIdRad() == id).findFirst().orElse(null);
+	}
 }

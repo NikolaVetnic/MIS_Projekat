@@ -21,7 +21,7 @@ public class Sto implements Serializable {
 	private String opisSto;
 
 	//bi-directional many-to-one association to Rezervacija
-	@OneToMany(mappedBy="sto")
+	@OneToMany(mappedBy="sto", fetch = FetchType.EAGER)
 	private List<Rezervacija> rezervacije;
 
 	//bi-directional many-to-many association to Smena
@@ -85,5 +85,10 @@ public class Sto implements Serializable {
 	public void setSmene(List<Smena> smene) {
 		this.smene = smene;
 	}
-
+	
+	
+	@Override
+	public String toString() {
+		return String.format("[%05d] %s", idSto, opisSto);
+	}
 }

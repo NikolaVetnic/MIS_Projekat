@@ -9,6 +9,8 @@ Istorija izmena:
 - 20210521 kompletirana funkcionalnost azuriranja korisnickog profila
 - 20210522 dodatna obelezja u entitetima na zahtev profesorice
 - 20210523 dodati dijagrami 2.3, 2.4 (azuriran) i 2.5, dodat BoUML projekat sa dijagramom klasa na Google Drive
+- 20210527 kreirani dijagrami sekvenci, uzeti na doradu i unos u seminarski rad
+- 20210528 dodate operacije i odgovarajuce crud klase koje je trazio Luka
 
 Uputstva:
 
