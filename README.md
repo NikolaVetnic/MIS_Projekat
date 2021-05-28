@@ -11,6 +11,7 @@ Istorija izmena:
 - 20210523 dodati dijagrami 2.3, 2.4 (azuriran) i 2.5, dodat BoUML projekat sa dijagramom klasa na Google Drive
 - 20210527 kreirani dijagrami sekvenci, uzeti na doradu i unos u seminarski rad
 - 20210528 dodate operacije i odgovarajuce crud klase koje je trazio Luka
+- 20210528 uradjeni dijagrami klasa, sekvenci i paketa, dodate ekranske forme za radnike i zapoceta implementacija funkcionalnosti online rezervacije stola
 
 Uputstva:
 
@@ -19,9 +20,3 @@ Uputstva:
 
 Linkovi:
 - [Google Drive folder projekta](https://drive.google.com/file/d/1vmfMTnNoMf_XlC45kIsL8_qhS_Zuq8jP/view?usp=sharing)
-- [Dijagram 2.1 Dijagram aktivnosti - online narucivanje (Google Drive)](https://drive.google.com/drive/folders/17IEi5ck91PqFXE3m_CiuAWPdmd4RWE0I?usp=sharing)
-- [Dijagram 2.2 Dijagram aktivnosti - online rezervacija stola (Google Drive)](https://drive.google.com/file/d/1-o4DRpnMsXfJBzCH5rI9WD9dApQptFgq/view?usp=sharing)
-- [Dijagram 2.3 Dijagram aktivnosti - kreiranje nabavke (Google Drive)](https://drive.google.com/file/d/1bF7o2_Rtpu3fYuGG1wiHppttqU8kjU85/view?usp=sharing)
-- [Dijagram 2.4 Use Case dijagram (Google Drive)](https://drive.google.com/file/d/1flkcqUvtXSsec-ivrmbcC9Aotp9bgvz7/view?usp=sharing)
-- [Dijagram 2.5 Dijagram klasa (Google Drive)](https://drive.google.com/file/d/1sTDNpQnLhak3-dh8lDcsPYU5Q7x2XYOc/view?usp=sharing)
-- [BoUML projekat sa dijagramom klasa 20210523 (Google Drive)](https://drive.google.com/file/d/1W9UiVVdD-LMwYNMgyWnsMdxvnOZsx7zl/view?usp=sharing)

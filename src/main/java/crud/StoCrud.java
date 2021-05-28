@@ -50,7 +50,7 @@ public class StoCrud {
 	public List<Rezervacija> listaRezervacijaZaSto(int id, Date poc, Date kraj) {
 		
 		return listaRezervacijaZaSto(id).stream()
-				.filter(r -> r.getDatRez().compareTo(poc) > 0 && r.getDatRez().compareTo(kraj) < 0)
+				.filter(r -> r.getDatRez().compareTo(poc) >= 0 && r.getDatRez().compareTo(kraj) < 0)
 				.collect(Collectors.toList());
 	}
 	
@@ -58,5 +58,11 @@ public class StoCrud {
 	public boolean jeRezervisanZaPeriod(int id, Date poc, Date kraj) {
 		
 		return listaRezervacijaZaSto(id, poc, kraj) != null;
+	}
+	
+	
+	public boolean jeRezervisanZaDan(int id, Date dan) {
+		
+		return listaRezervacijaZaSto(id, dan, dan) != null;
 	}
 }
