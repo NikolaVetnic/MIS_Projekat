@@ -27,7 +27,7 @@ import crud.RadnikCrud;
 import model.Klijent;
 import model.Radnik;
 
-public class KlijentLoginForma{
+public class RadnikLoginForma{
 		
 	private static JTextField tfKorisnickoIme;
 	private static JFrame restoranForma;
@@ -37,7 +37,7 @@ public class KlijentLoginForma{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		KlijentLoginForma.otvori();
+		RadnikLoginForma.otvori();
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class KlijentLoginForma{
 			System.err.println("Greška prilikom podešavanja GUI-ja");
 		}
 		restoranForma = new JFrame();
-		restoranForma.setTitle("Informacioni sistem restorana VVV - klijenti");
+		restoranForma.setTitle("Informacioni sistem restorana VVV - zaposleni");
 		restoranForma.setBounds(100, 100, 1280, 720);
 		restoranForma.setMinimumSize(new Dimension(1280, 720));
 		restoranForma.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -143,12 +143,17 @@ public class KlijentLoginForma{
 		String lozinka = String.valueOf(pfLozinka.getPassword());
 		if (!korisnickoIme.isEmpty() && !lozinka.isEmpty()) {
 				try {
-					Klijent k = KlijentCrud.pronadjiKlijenta(korisnickoIme, lozinka);
-						Poruka poruka = new Poruka(restoranForma, "Uspešno ste se prijavili kao klijent", 1, false);
-						poruka.prikazi();
-						zatvori();
-						KlijentForma klijentForma = new KlijentForma(k);
-						klijentForma.otvori();
+						Radnik r = RadnikCrud.pronadjiRadnika(korisnickoIme, lozinka);
+						if(r.getRadnoMesto().getOpisRM().equals("Menadzer")) {
+							Poruka poruka = new Poruka(restoranForma, "Uspešno ste se prijavili kao menadzer", 1, false);
+							poruka.prikazi();
+							zatvori();
+							MenadzerForma menadzerForma = new MenadzerForma(r);
+							menadzerForma.otvori();
+						} else {
+							Poruka poruka = new Poruka(restoranForma, "Forma za konobara nije implementirana", 1, true);
+							poruka.prikazi();
+						}
 				} catch (Exception e) {
 					Poruka poruka = new Poruka(restoranForma, "Uneti podaci nisu ispravni.", 1, true);
 					poruka.prikazi();

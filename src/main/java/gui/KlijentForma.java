@@ -29,7 +29,7 @@ import crud.KlijentCrud;
 import model.Klijent;
 
 public class KlijentForma {
-	private JFrame frmKlijent;
+	private static JFrame frmKlijent;
 	private JPasswordField pfNovaLozinkaPonovo;
 	private JPasswordField pfNovaLozinka;
 	private JPasswordField pfStaraLozinka;
@@ -37,6 +37,8 @@ public class KlijentForma {
 	private JLabel lblTrenutnoKorisničkoIme;
 	private Klijent klijent;
 	private JLabel lblRestoran;
+	private JTextField tfAdresa;
+	private JTextField textField;
 	
 	public KlijentForma(Klijent klijent) {
 		initialize(klijent);
@@ -112,6 +114,8 @@ public class KlijentForma {
 		JButton btnRezervacija = new JButton("Nova rezervacija");
 		btnRezervacija.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				RezervacijaForma rf = new RezervacijaForma();
+				rf.setVisible(true);
 			}
 		});
 		
@@ -119,7 +123,7 @@ public class KlijentForma {
 		btnRezervacija.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		GridBagConstraints gbc_btnRezervacija = new GridBagConstraints();
 		gbc_btnRezervacija.insets = new Insets(0, 0, 5, 5);
-		gbc_btnRezervacija.gridx = 1;
+		gbc_btnRezervacija.gridx = 2;
 		gbc_btnRezervacija.gridy = 1;
 		panel_7.add(btnRezervacija, gbc_btnRezervacija);
 		
@@ -143,31 +147,21 @@ public class KlijentForma {
 		
 		JPanel panel_6 = new JPanel();
 		panel_3.add(panel_6, BorderLayout.CENTER);
-		GridBagLayout gbl_panel_6 = new GridBagLayout();
-		gbl_panel_6.columnWidths = new int[]{90, 337, 90, 0};
-		gbl_panel_6.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel_6.columnWeights = new double[]{1.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel_6.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		panel_6.setLayout(gbl_panel_6);
+		panel_6.setLayout(null);
 		
-		JLabel lblPromenaKorisnickogImena = new JLabel("Promena korisničkog imena:");
-		lblPromenaKorisnickogImena.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_lblPromenaKorisnickogImena = new GridBagConstraints();
-		gbc_lblPromenaKorisnickogImena.insets = new Insets(0, 0, 5, 5);
-		gbc_lblPromenaKorisnickogImena.gridx = 1;
-		gbc_lblPromenaKorisnickogImena.gridy = 1;
-		panel_6.add(lblPromenaKorisnickogImena, gbc_lblPromenaKorisnickogImena);
+		JLabel lblPromenaBrojaTelefona = new JLabel("Promena broja telefona");
+		lblPromenaBrojaTelefona.setBounds(664, 90, 182, 19);
+		lblPromenaBrojaTelefona.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(lblPromenaBrojaTelefona);
 		
-		JLabel lblTrenutnoKorisničko = new JLabel("Vaše trenutno korisničko ime:");
+		JLabel lblTrenutnoKorisničko = new JLabel("Vaše trenutni korisnički broj:");
+		lblTrenutnoKorisničko.setBounds(346, 114, 221, 19);
 		lblTrenutnoKorisničko.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_lblTrenutnoKorisničko = new GridBagConstraints();
-		gbc_lblTrenutnoKorisničko.anchor = GridBagConstraints.EAST;
-		gbc_lblTrenutnoKorisničko.insets = new Insets(0, 0, 5, 5);
-		gbc_lblTrenutnoKorisničko.gridx = 0;
-		gbc_lblTrenutnoKorisničko.gridy = 2;
-		panel_6.add(lblTrenutnoKorisničko, gbc_lblTrenutnoKorisničko);
+		panel_6.add(lblTrenutnoKorisničko);
 		
-		lblTrenutnoKorisničkoIme = klijent.getImeKli() == null ? new JLabel("nije podešeno") : new JLabel(klijent.getImeKli());
+		JLabel label = new JLabel(klijent.getTelKli());
+		label.setBounds(674, 114, 149, 15);
+		lblTrenutnoKorisničkoIme = klijent.getTelKli() == null ? new JLabel("nije podešeno") : label;
 		lblTrenutnoKorisničkoIme.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		GridBagConstraints gbc_lblTrenutnoKorisničkoIme = new GridBagConstraints();
 		gbc_lblTrenutnoKorisničkoIme.insets = new Insets(0, 0, 5, 5);
@@ -175,27 +169,20 @@ public class KlijentForma {
 		gbc_lblTrenutnoKorisničkoIme.gridy = 2;
 		panel_6.add(lblTrenutnoKorisničkoIme, gbc_lblTrenutnoKorisničkoIme);
 		
-		JLabel lblNovoKorisničko = new JLabel("Unesite novo korisničko ime:");
+		JLabel lblNovoKorisničko = new JLabel("Unesite novi korisnički broj:");
+		lblNovoKorisničko.setBounds(355, 142, 212, 19);
 		lblNovoKorisničko.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_lblNovoKorisničko = new GridBagConstraints();
-		gbc_lblNovoKorisničko.anchor = GridBagConstraints.EAST;
-		gbc_lblNovoKorisničko.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNovoKorisničko.gridx = 0;
-		gbc_lblNovoKorisničko.gridy = 3;
-		panel_6.add(lblNovoKorisničko, gbc_lblNovoKorisničko);
+		panel_6.add(lblNovoKorisničko);
 		
 		tfKorisničkoIme = new JTextField();
+		tfKorisničkoIme.setBounds(572, 140, 332, 23);
 		tfKorisničkoIme.setHorizontalAlignment(SwingConstants.CENTER);
 		tfKorisničkoIme.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_tfKorisničkoIme = new GridBagConstraints();
-		gbc_tfKorisničkoIme.insets = new Insets(0, 0, 5, 5);
-		gbc_tfKorisničkoIme.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tfKorisničkoIme.gridx = 1;
-		gbc_tfKorisničkoIme.gridy = 3;
-		panel_6.add(tfKorisničkoIme, gbc_tfKorisničkoIme);
+		panel_6.add(tfKorisničkoIme);
 		tfKorisničkoIme.setColumns(10);			
 		
-		JButton btnPromeniKorisnickoIme = new JButton("Promeni korisničko ime");
+		JButton btnPromeniKorisnickoIme = new JButton("Promeni broj");
+		btnPromeniKorisnickoIme.setBounds(664, 167, 182, 29);
 		btnPromeniKorisnickoIme.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -224,80 +211,75 @@ public class KlijentForma {
 		});
 		btnPromeniKorisnickoIme.setFocusable(false);
 		btnPromeniKorisnickoIme.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_btnPromeniKorisnickoIme = new GridBagConstraints();
-		gbc_btnPromeniKorisnickoIme.insets = new Insets(0, 0, 5, 5);
-		gbc_btnPromeniKorisnickoIme.gridx = 1;
-		gbc_btnPromeniKorisnickoIme.gridy = 4;
-		panel_6.add(btnPromeniKorisnickoIme, gbc_btnPromeniKorisnickoIme);
+		panel_6.add(btnPromeniKorisnickoIme);
 		
-		JLabel lblPromenaLozinke = new JLabel("Promena lozinke");
-		lblPromenaLozinke.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblPromenaLozinke.setHorizontalAlignment(SwingConstants.CENTER);
-		GridBagConstraints gbc_lblPromenaLozinke = new GridBagConstraints();
-		gbc_lblPromenaLozinke.fill = GridBagConstraints.HORIZONTAL;
-		gbc_lblPromenaLozinke.insets = new Insets(0, 0, 5, 5);
-		gbc_lblPromenaLozinke.gridx = 1;
-		gbc_lblPromenaLozinke.gridy = 6;
-		panel_6.add(lblPromenaLozinke, gbc_lblPromenaLozinke);
+		JLabel lblPromenaAdrese = new JLabel("Promena adrese");
+		lblPromenaAdrese.setBounds(664, 211, 133, 19);
+		lblPromenaAdrese.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(lblPromenaAdrese);
+		
+		JLabel lblTrenutnaAdresa = new JLabel("Vaša trenutna adresa:");
+		lblTrenutnaAdresa.setBounds(394, 229, 173, 19);
+		lblTrenutnaAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(lblTrenutnaAdresa);
+		
+		JLabel label_1 = new JLabel(klijent.getAdrKli());
+		label_1.setBounds(572, 229, 332, 15);
+		lblTrenutnaAdresa = klijent.getAdrKli() == null ? new JLabel("nije podešeno") : label_1;
+		lblTrenutnaAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		GridBagConstraints gbc_lblTrenutnaAdresaaa = new GridBagConstraints();
+		gbc_lblTrenutnaAdresaaa.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTrenutnaAdresaaa.gridx = 1;
+		gbc_lblTrenutnaAdresaaa.gridy = 2;
+		panel_6.add(lblTrenutnaAdresa, gbc_lblTrenutnaAdresaaa);
+		
+		JLabel lblNovaAdresa = new JLabel("Unesite novu adresu:");
+		lblNovaAdresa.setBounds(401, 257, 166, 19);
+		lblNovaAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(lblNovaAdresa);
+		
+		tfAdresa = new JTextField();
+		tfAdresa.setBounds(572, 140, 332, 23);
+		tfAdresa.setHorizontalAlignment(SwingConstants.CENTER);
+		tfAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(tfAdresa);
+		tfAdresa.setColumns(10);
 		
 		JLabel lblStaraLozinka = new JLabel("Stara lozinka:");
+		lblStaraLozinka.setBounds(463, 356, 104, 19);
 		lblStaraLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_lblStaraLozinka = new GridBagConstraints();
-		gbc_lblStaraLozinka.anchor = GridBagConstraints.EAST;
-		gbc_lblStaraLozinka.insets = new Insets(0, 0, 5, 5);
-		gbc_lblStaraLozinka.gridx = 0;
-		gbc_lblStaraLozinka.gridy = 7;
-		panel_6.add(lblStaraLozinka, gbc_lblStaraLozinka);
+		panel_6.add(lblStaraLozinka);
 		
 		pfStaraLozinka = new JPasswordField();
+		pfStaraLozinka.setBounds(572, 354, 332, 23);
 		pfStaraLozinka.setHorizontalAlignment(SwingConstants.CENTER);
 		pfStaraLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_pfStaraLozinka = new GridBagConstraints();
-		gbc_pfStaraLozinka.insets = new Insets(0, 0, 5, 5);
-		gbc_pfStaraLozinka.fill = GridBagConstraints.HORIZONTAL;
-		gbc_pfStaraLozinka.gridx = 1;
-		gbc_pfStaraLozinka.gridy = 7;
-		panel_6.add(pfStaraLozinka, gbc_pfStaraLozinka);
+		panel_6.add(pfStaraLozinka);
 		
 		JLabel lblNovaLozinka = new JLabel("Nova lozinka:");
+		lblNovaLozinka.setBounds(464, 384, 103, 19);
 		lblNovaLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_lblNovaLozinka = new GridBagConstraints();
-		gbc_lblNovaLozinka.anchor = GridBagConstraints.EAST;
-		gbc_lblNovaLozinka.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNovaLozinka.gridx = 0;
-		gbc_lblNovaLozinka.gridy = 8;
-		panel_6.add(lblNovaLozinka, gbc_lblNovaLozinka);
+		panel_6.add(lblNovaLozinka);
 		
 		pfNovaLozinka = new JPasswordField();
+		pfNovaLozinka.setBounds(572, 382, 332, 23);
 		pfNovaLozinka.setHorizontalAlignment(SwingConstants.CENTER);
 		pfNovaLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_pfNovaLozinka = new GridBagConstraints();
-		gbc_pfNovaLozinka.insets = new Insets(0, 0, 5, 5);
-		gbc_pfNovaLozinka.fill = GridBagConstraints.HORIZONTAL;
-		gbc_pfNovaLozinka.gridx = 1;
-		gbc_pfNovaLozinka.gridy = 8;
-		panel_6.add(pfNovaLozinka, gbc_pfNovaLozinka);
+		panel_6.add(pfNovaLozinka);
 		
 		JLabel lblNovaLozinkaPonovo = new JLabel("Ponovite novu lozinku:");
+		lblNovaLozinkaPonovo.setBounds(392, 412, 175, 19);
 		lblNovaLozinkaPonovo.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_lblNovaLozinkaPonovo = new GridBagConstraints();
-		gbc_lblNovaLozinkaPonovo.anchor = GridBagConstraints.EAST;
-		gbc_lblNovaLozinkaPonovo.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNovaLozinkaPonovo.gridx = 0;
-		gbc_lblNovaLozinkaPonovo.gridy = 9;
-		panel_6.add(lblNovaLozinkaPonovo, gbc_lblNovaLozinkaPonovo);
+		panel_6.add(lblNovaLozinkaPonovo);
 		
 		pfNovaLozinkaPonovo = new JPasswordField();
+		pfNovaLozinkaPonovo.setBounds(572, 410, 332, 23);
 		pfNovaLozinkaPonovo.setHorizontalAlignment(SwingConstants.CENTER);
 		pfNovaLozinkaPonovo.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_pfNovaLozinkaPonovo = new GridBagConstraints();
-		gbc_pfNovaLozinkaPonovo.insets = new Insets(0, 0, 5, 5);
-		gbc_pfNovaLozinkaPonovo.fill = GridBagConstraints.HORIZONTAL;
-		gbc_pfNovaLozinkaPonovo.gridx = 1;
-		gbc_pfNovaLozinkaPonovo.gridy = 9;
-		panel_6.add(pfNovaLozinkaPonovo, gbc_pfNovaLozinkaPonovo);
+		panel_6.add(pfNovaLozinkaPonovo);
 		
 		JButton btnPromeniLozinku = new JButton("Promeni lozinku");
+		btnPromeniLozinku.setBounds(664, 438, 182, 29);
 		btnPromeniLozinku.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -339,14 +321,32 @@ public class KlijentForma {
 		
 		btnPromeniLozinku.setFocusable(false);
 		btnPromeniLozinku.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_btnPromeniLozinku = new GridBagConstraints();
-		gbc_btnPromeniLozinku.insets = new Insets(0, 0, 5, 5);
-		gbc_btnPromeniLozinku.gridx = 1;
-		gbc_btnPromeniLozinku.gridy = 10;
-		panel_6.add(btnPromeniLozinku, gbc_btnPromeniLozinku);
+		panel_6.add(btnPromeniLozinku);
+		
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setFont(new Font("Dialog", Font.PLAIN, 16));
+		textField.setColumns(10);
+		textField.setBounds(572, 255, 332, 23);
+		panel_6.add(textField);
+		
+		JButton btnPromeniAdresu = new JButton("Promeni adresu");
+		btnPromeniAdresu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnPromeniAdresu.setFont(new Font("Dialog", Font.PLAIN, 16));
+		btnPromeniAdresu.setFocusable(false);
+		btnPromeniAdresu.setBounds(664, 283, 182, 29);
+		panel_6.add(btnPromeniAdresu);
+		
+		JLabel lblPromenaLozinke = new JLabel("Promena lozinke");
+		lblPromenaLozinke.setFont(new Font("Dialog", Font.PLAIN, 16));
+		lblPromenaLozinke.setBounds(664, 331, 133, 15);
+		panel_6.add(lblPromenaLozinke);
 	}
 																					
-	public void zatvori() {											
+	public static void zatvori() {											
 		frmKlijent.dispose();
 		KlijentLoginForma.otvori();
 	}
@@ -354,6 +354,4 @@ public class KlijentForma {
 	public void otvori() {
 		frmKlijent.setVisible(true);
 	}
-	
-	
 }
