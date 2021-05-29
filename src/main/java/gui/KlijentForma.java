@@ -33,12 +33,13 @@ public class KlijentForma {
 	private JPasswordField pfNovaLozinkaPonovo;
 	private JPasswordField pfNovaLozinka;
 	private JPasswordField pfStaraLozinka;
-	private JTextField tfKorisničkoIme;
-	private JLabel lblTrenutnoKorisničkoIme;
+	private JTextField tfBroj;
+	private JLabel lblTrenutniBroj;
 	private Klijent klijent;
 	private JLabel lblRestoran;
 	private JTextField tfAdresa;
 	private JTextField textField;
+	private JLabel lblTrenutnaAdresa;
 	
 	public KlijentForma(Klijent klijent) {
 		initialize(klijent);
@@ -136,6 +137,31 @@ public class KlijentForma {
 		lblPorudžbine.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblPorudžbine, BorderLayout.NORTH);
 		
+		JPanel panel_8 = new JPanel();
+		panel_2.add(panel_8, BorderLayout.CENTER);
+		GridBagLayout gbl_panel_8 = new GridBagLayout();
+		gbl_panel_8.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
+		gbl_panel_8.rowHeights = new int[]{0, 0, 0, 0};
+		gbl_panel_8.columnWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_panel_8.rowWeights = new double[]{1.0, 0.0, 1.0, Double.MIN_VALUE};
+		panel_8.setLayout(gbl_panel_8);
+		
+		JButton btnNarudzbina = new JButton("Nova narudžbina");
+		btnNarudzbina.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				NarudzbinaForma nf = new NarudzbinaForma();
+				nf.setVisible(true);
+			}
+		});
+		
+		btnNarudzbina.setFocusable(false);
+		btnNarudzbina.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		GridBagConstraints gbc_btnNarudzbina = new GridBagConstraints();
+		gbc_btnNarudzbina.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNarudzbina.gridx = 2;
+		gbc_btnNarudzbina.gridy = 1;
+		panel_8.add(btnNarudzbina, gbc_btnNarudzbina);
+		
 		JPanel panel_3 = new JPanel();
 		tabbedPane.addTab("Podešavanje profila", null, panel_3, null);
 		panel_3.setLayout(new BorderLayout(0, 0));
@@ -154,77 +180,77 @@ public class KlijentForma {
 		lblPromenaBrojaTelefona.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(lblPromenaBrojaTelefona);
 		
-		JLabel lblTrenutnoKorisničko = new JLabel("Vaše trenutni korisnički broj:");
-		lblTrenutnoKorisničko.setBounds(346, 114, 221, 19);
-		lblTrenutnoKorisničko.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_6.add(lblTrenutnoKorisničko);
+		JLabel lblTrenutniKorisnički = new JLabel("Vaše trenutni korisnički broj:");
+		lblTrenutniKorisnički.setBounds(346, 114, 221, 19);
+		lblTrenutniKorisnički.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(lblTrenutniKorisnički);
 		
 		JLabel label = new JLabel(klijent.getTelKli());
 		label.setBounds(674, 114, 149, 15);
-		lblTrenutnoKorisničkoIme = klijent.getTelKli() == null ? new JLabel("nije podešeno") : label;
-		lblTrenutnoKorisničkoIme.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		GridBagConstraints gbc_lblTrenutnoKorisničkoIme = new GridBagConstraints();
-		gbc_lblTrenutnoKorisničkoIme.insets = new Insets(0, 0, 5, 5);
-		gbc_lblTrenutnoKorisničkoIme.gridx = 1;
-		gbc_lblTrenutnoKorisničkoIme.gridy = 2;
-		panel_6.add(lblTrenutnoKorisničkoIme, gbc_lblTrenutnoKorisničkoIme);
+		lblTrenutniBroj = klijent.getTelKli() == null ? new JLabel("nije podešeno") : label;
+		lblTrenutniBroj.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		GridBagConstraints gbc_lblTrenutniBroj = new GridBagConstraints();
+		gbc_lblTrenutniBroj.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTrenutniBroj.gridx = 1;
+		gbc_lblTrenutniBroj.gridy = 2;
+		panel_6.add(lblTrenutniBroj, gbc_lblTrenutniBroj);
 		
-		JLabel lblNovoKorisničko = new JLabel("Unesite novi korisnički broj:");
-		lblNovoKorisničko.setBounds(355, 142, 212, 19);
-		lblNovoKorisničko.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_6.add(lblNovoKorisničko);
+		JLabel lblNoviKorisnički = new JLabel("Unesite novi korisnički broj:");
+		lblNoviKorisnički.setBounds(355, 145, 212, 19);
+		lblNoviKorisnički.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(lblNoviKorisnički);
 		
-		tfKorisničkoIme = new JTextField();
-		tfKorisničkoIme.setBounds(572, 140, 332, 23);
-		tfKorisničkoIme.setHorizontalAlignment(SwingConstants.CENTER);
-		tfKorisničkoIme.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_6.add(tfKorisničkoIme);
-		tfKorisničkoIme.setColumns(10);			
+		tfBroj = new JTextField();
+		tfBroj.setBounds(572, 140, 332, 29);
+		tfBroj.setHorizontalAlignment(SwingConstants.CENTER);
+		tfBroj.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(tfBroj);
+		tfBroj.setColumns(10);			
 		
-		JButton btnPromeniKorisnickoIme = new JButton("Promeni broj");
-		btnPromeniKorisnickoIme.setBounds(664, 167, 182, 29);
-		btnPromeniKorisnickoIme.addActionListener(new ActionListener() {
+		JButton btnPromeniBroj = new JButton("Promeni broj");
+		btnPromeniBroj.setBounds(664, 171, 182, 29);
+		btnPromeniBroj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				KlijentCrud kCrud = new KlijentCrud();
-				String ime = tfKorisničkoIme.getText();
+				String broj = tfBroj.getText();
 				
-				if (!ime.trim().isEmpty()) {
-					if (kCrud.promeniIme(klijent, ime)) {
+				if (!broj.trim().isEmpty()) {
+					if (kCrud.promeniTelefon(klijent, broj)) {
 						
-						Poruka poruka = new Poruka(frmKlijent, "Uspešno ste promenili korisničko ime.", 1, false);
+						Poruka poruka = new Poruka(frmKlijent, "Uspešno ste promenili broj.", 1, false);
 						poruka.prikazi();
 						
-						tfKorisničkoIme.setText("");
-						lblTrenutnoKorisničkoIme.setText(ime);
+						tfBroj.setText("");
+						lblTrenutniBroj.setText(broj);
 						
 					} else {
 						
-						Poruka poruka = new Poruka(frmKlijent, "Greška prilikom promene korisničkog imena.", 1, true);
+						Poruka poruka = new Poruka(frmKlijent, "Greška prilikom promene broja.", 1, true);
 						poruka.prikazi();
 					}
 				} else {
-					Poruka poruka = new Poruka(frmKlijent, "Polje za novo korisničko ime je prazno", 1, true);
+					Poruka poruka = new Poruka(frmKlijent, "Polje za novi broj je prazno", 1, true);
 					poruka.prikazi();
 				} 
 			}
 		});
-		btnPromeniKorisnickoIme.setFocusable(false);
-		btnPromeniKorisnickoIme.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_6.add(btnPromeniKorisnickoIme);
+		btnPromeniBroj.setFocusable(false);
+		btnPromeniBroj.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_6.add(btnPromeniBroj);
 		
 		JLabel lblPromenaAdrese = new JLabel("Promena adrese");
-		lblPromenaAdrese.setBounds(664, 211, 133, 19);
+		lblPromenaAdrese.setBounds(664, 207, 133, 19);
 		lblPromenaAdrese.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(lblPromenaAdrese);
 		
-		JLabel lblTrenutnaAdresa = new JLabel("Vaša trenutna adresa:");
+		lblTrenutnaAdresa = new JLabel("Vaša trenutna adresa:");
 		lblTrenutnaAdresa.setBounds(394, 229, 173, 19);
 		lblTrenutnaAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(lblTrenutnaAdresa);
 		
 		JLabel label_1 = new JLabel(klijent.getAdrKli());
-		label_1.setBounds(572, 229, 332, 15);
+		label_1.setBounds(572, 231, 332, 15);
 		lblTrenutnaAdresa = klijent.getAdrKli() == null ? new JLabel("nije podešeno") : label_1;
 		lblTrenutnaAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		GridBagConstraints gbc_lblTrenutnaAdresaaa = new GridBagConstraints();
@@ -234,52 +260,83 @@ public class KlijentForma {
 		panel_6.add(lblTrenutnaAdresa, gbc_lblTrenutnaAdresaaa);
 		
 		JLabel lblNovaAdresa = new JLabel("Unesite novu adresu:");
-		lblNovaAdresa.setBounds(401, 257, 166, 19);
+		lblNovaAdresa.setBounds(401, 260, 166, 19);
 		lblNovaAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(lblNovaAdresa);
 		
 		tfAdresa = new JTextField();
-		tfAdresa.setBounds(572, 140, 332, 23);
 		tfAdresa.setHorizontalAlignment(SwingConstants.CENTER);
-		tfAdresa.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_6.add(tfAdresa);
+		tfAdresa.setFont(new Font("Dialog", Font.PLAIN, 16));
 		tfAdresa.setColumns(10);
+		tfAdresa.setBounds(572, 255, 332, 29);
+		panel_6.add(tfAdresa);
+		
+		JButton btnPromeniAdresu = new JButton("Promeni adresu");
+		btnPromeniAdresu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				KlijentCrud kCrud = new KlijentCrud();
+				String adresa = tfAdresa.getText();
+				
+				if (!adresa.trim().isEmpty()) {
+					if (kCrud.promeniAdresu(klijent, adresa)) {
+						
+						Poruka poruka = new Poruka(frmKlijent, "Uspešno ste promenili adresu.", 1, false);
+						poruka.prikazi();
+						
+						tfAdresa.setText("");
+						lblTrenutnaAdresa.setText(adresa);
+						
+					} else {
+						
+						Poruka poruka = new Poruka(frmKlijent, "Greška prilikom promene adrese.", 1, true);
+						poruka.prikazi();
+					}
+				} else {
+					Poruka poruka = new Poruka(frmKlijent, "Polje za novu adresu je prazno", 1, true);
+					poruka.prikazi();
+				} 
+			}
+		});
+		btnPromeniAdresu.setFont(new Font("Dialog", Font.PLAIN, 16));
+		btnPromeniAdresu.setFocusable(false);
+		btnPromeniAdresu.setBounds(664, 286, 182, 29);
+		panel_6.add(btnPromeniAdresu);
 		
 		JLabel lblStaraLozinka = new JLabel("Stara lozinka:");
-		lblStaraLozinka.setBounds(463, 356, 104, 19);
+		lblStaraLozinka.setBounds(463, 355, 104, 19);
 		lblStaraLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(lblStaraLozinka);
 		
 		pfStaraLozinka = new JPasswordField();
-		pfStaraLozinka.setBounds(572, 354, 332, 23);
+		pfStaraLozinka.setBounds(572, 350, 332, 29);
 		pfStaraLozinka.setHorizontalAlignment(SwingConstants.CENTER);
 		pfStaraLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(pfStaraLozinka);
 		
 		JLabel lblNovaLozinka = new JLabel("Nova lozinka:");
-		lblNovaLozinka.setBounds(464, 384, 103, 19);
+		lblNovaLozinka.setBounds(463, 385, 103, 19);
 		lblNovaLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(lblNovaLozinka);
 		
 		pfNovaLozinka = new JPasswordField();
-		pfNovaLozinka.setBounds(572, 382, 332, 23);
+		pfNovaLozinka.setBounds(572, 383, 332, 29);
 		pfNovaLozinka.setHorizontalAlignment(SwingConstants.CENTER);
 		pfNovaLozinka.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(pfNovaLozinka);
 		
 		JLabel lblNovaLozinkaPonovo = new JLabel("Ponovite novu lozinku:");
-		lblNovaLozinkaPonovo.setBounds(392, 412, 175, 19);
+		lblNovaLozinkaPonovo.setBounds(392, 420, 175, 19);
 		lblNovaLozinkaPonovo.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(lblNovaLozinkaPonovo);
 		
 		pfNovaLozinkaPonovo = new JPasswordField();
-		pfNovaLozinkaPonovo.setBounds(572, 410, 332, 23);
+		pfNovaLozinkaPonovo.setBounds(572, 415, 332, 29);
 		pfNovaLozinkaPonovo.setHorizontalAlignment(SwingConstants.CENTER);
 		pfNovaLozinkaPonovo.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(pfNovaLozinkaPonovo);
 		
 		JButton btnPromeniLozinku = new JButton("Promeni lozinku");
-		btnPromeniLozinku.setBounds(664, 438, 182, 29);
+		btnPromeniLozinku.setBounds(664, 446, 182, 29);
 		btnPromeniLozinku.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -304,6 +361,7 @@ public class KlijentForma {
 							pfStaraLozinka.setText("");
 							pfNovaLozinka.setText("");
 							pfNovaLozinkaPonovo.setText("");
+							zatvori();
 							
 						} else {
 							
@@ -323,26 +381,9 @@ public class KlijentForma {
 		btnPromeniLozinku.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_6.add(btnPromeniLozinku);
 		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("Dialog", Font.PLAIN, 16));
-		textField.setColumns(10);
-		textField.setBounds(572, 255, 332, 23);
-		panel_6.add(textField);
-		
-		JButton btnPromeniAdresu = new JButton("Promeni adresu");
-		btnPromeniAdresu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnPromeniAdresu.setFont(new Font("Dialog", Font.PLAIN, 16));
-		btnPromeniAdresu.setFocusable(false);
-		btnPromeniAdresu.setBounds(664, 283, 182, 29);
-		panel_6.add(btnPromeniAdresu);
-		
 		JLabel lblPromenaLozinke = new JLabel("Promena lozinke");
 		lblPromenaLozinke.setFont(new Font("Dialog", Font.PLAIN, 16));
-		lblPromenaLozinke.setBounds(664, 331, 133, 15);
+		lblPromenaLozinke.setBounds(664, 326, 133, 15);
 		panel_6.add(lblPromenaLozinke);
 	}
 																					

@@ -91,6 +91,6 @@ public class Rezervacija implements Serializable {
 	
 	@Override
 	public String toString() {
-		return String.format("[%05d] %s %s", idRez, DateConverter.convertToLocalDateViaInstant(datRez), opisRez);
+		return String.format("[%05d] %s %s %s %s", idRez, DateConverter.convertToLocalDateViaInstant(datRez), sto, klijent, opisRez);
 	}
 }

@@ -150,8 +150,11 @@ public class RadnikLoginForma{
 							zatvori();
 							MenadzerForma menadzerForma = new MenadzerForma(r);
 							menadzerForma.otvori();
-						} else {
+						} else if(r.getRadnoMesto().getOpisRM().equals("Konobar")){
 							Poruka poruka = new Poruka(restoranForma, "Forma za konobara nije implementirana", 1, true);
+							poruka.prikazi();
+						} else {
+							Poruka poruka = new Poruka(restoranForma, "Forma za admina nije implementirana", 1, true);
 							poruka.prikazi();
 						}
 				} catch (Exception e) {
