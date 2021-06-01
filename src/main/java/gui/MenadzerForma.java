@@ -21,6 +21,8 @@ import model.Radnik;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MenadzerForma {
 
@@ -110,6 +112,12 @@ public class MenadzerForma {
 		panel_7.setLayout(gbl_panel_7);
 		
 		JButton btnObradarezervacija = new JButton("obradaRezervacija");
+		btnObradarezervacija.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ObradaRezervacijaForma orf = new ObradaRezervacijaForma();
+				orf.setVisible(true);
+			}
+		});
 		GridBagConstraints gbc_btnObradarezervacija = new GridBagConstraints();
 		gbc_btnObradarezervacija.insets = new Insets(0, 0, 5, 5);
 		gbc_btnObradarezervacija.gridx = 2;
