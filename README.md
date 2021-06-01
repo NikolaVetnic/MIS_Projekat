@@ -12,6 +12,7 @@ Istorija izmena:
 - 20210527 kreirani dijagrami sekvenci, uzeti na doradu i unos u seminarski rad
 - 20210528 dodate operacije i odgovarajuce crud klase koje je trazio Luka
 - 20210528 uradjeni dijagrami klasa, sekvenci i paketa, dodate ekranske forme za radnike i zapoceta implementacija funkcionalnosti online rezervacije stola
+- 20210601 seminarski rad uradjen do dela prikaza implementacije
 
 Uputstva:
 
