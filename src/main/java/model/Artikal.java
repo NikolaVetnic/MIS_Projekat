@@ -135,6 +135,7 @@ public class Artikal implements Serializable {
 	
 	@Override
 	public String toString() {
-		return String.format("[%05d] %s", idArt, nazArt.toUpperCase());
+//		return String.format("[%05d] %s", idArt, nazArt.toUpperCase());
+		return String.format("%s", nazArt.toUpperCase());
 	}
 }

@@ -43,7 +43,7 @@ public class Klijent implements Serializable {
 	private List<Narudzbina> narudzbine;
 
 	//bi-directional many-to-one association to Rezervacija
-	@OneToMany(mappedBy="klijent")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="klijent")
 	private List<Rezervacija> rezervacije;
 
 	
@@ -204,6 +204,7 @@ public class Klijent implements Serializable {
 	
 	@Override
 	public String toString() {
-		return String.format("[%05d] %s, %s <%s>", idKli, imeKli, emailKli, passKli.replaceAll(".", "*"));
+//		return String.format("[%05d] %s, %s <%s>", idKli, imeKli, emailKli, passKli.replaceAll(".", "*"));
+		return String.format("%s, %s <%s>", imeKli, emailKli, passKli.replaceAll(".", "*"));
 	}
 }

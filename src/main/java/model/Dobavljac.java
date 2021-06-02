@@ -112,6 +112,7 @@ public class Dobavljac implements Serializable {
 	
 	@Override
 	public String toString() {
-		return String.format("[%05d] %s", idDob, nazDob);
+//		return String.format("[%05d] %s", idDob, nazDob);
+		return String.format("%s", nazDob);
 	}
 }

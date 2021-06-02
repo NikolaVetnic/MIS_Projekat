@@ -112,6 +112,7 @@ public class Dostavljac implements Serializable {
 	
 	@Override
 	public String toString() {
-		return String.format("[%05d] %s", idDos, nazDos);
+//		return String.format("[%05d] %s", idDos, nazDos);
+		return String.format("%s", nazDos);
 	}
 }

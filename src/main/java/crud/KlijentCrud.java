@@ -1,6 +1,8 @@
 package crud;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -8,6 +10,8 @@ import javax.persistence.Query;
 
 import model.Klijent;
 import model.KlijentFields;
+import model.Rezervacija;
+import utils.DateConverter;
 import utils.PersistenceUtil;
 
 public class KlijentCrud {
@@ -171,6 +175,33 @@ public class KlijentCrud {
 		em.close();
 		
 		return list;
+	}
+
+	
+	public List<Rezervacija> listaRezervacijaZaKlijentaZaDan(String ime, String pass, LocalDate date) {
+		
+		Klijent k = pronadjiKlijenta(ime, pass);
+		
+		if (k != null)
+			return k.getRezervacije().stream()
+					.filter(r -> DateConverter.convertToLocalDateViaInstant(r.getDatRez()).equals(date))
+					.collect(Collectors.toList());
+		
+		return null;
+	}
+
+	
+	public List<Rezervacija> listaRezervacijaZaDan(LocalDate date) {
+		
+		List<Klijent> klijenti = listaKlijenata();
+		
+		if (klijenti != null)
+			return klijenti.stream()
+					.flatMap(k -> k.getRezervacije().stream())
+					.filter(r -> DateConverter.convertToLocalDateViaInstant(r.getDatRez()).equals(date))
+					.collect(Collectors.toList());
+		
+		return null;
 	}
 	
 	

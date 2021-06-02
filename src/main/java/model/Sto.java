@@ -89,6 +89,7 @@ public class Sto implements Serializable {
 	
 	@Override
 	public String toString() {
-		return String.format("[%05d] %s", idSto, opisSto);
+//		return String.format("[%05d] %s", idSto, opisSto);
+		return String.format("%s", opisSto);
 	}
 }
