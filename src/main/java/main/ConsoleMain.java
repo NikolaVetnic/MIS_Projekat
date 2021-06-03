@@ -86,5 +86,7 @@ public class ConsoleMain {
 		System.out.println(radCrud.pronadjiRadnika(1));
 		
 		System.out.println(kliCrud.listaRezervacijaZaKlijentaZaDan("063333444", "Saban", LocalDate.of(2021, 6, 1)));
+		
+		
 	}
 }

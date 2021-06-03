@@ -47,9 +47,34 @@ public class StoCrud {
 	}
 	
 	
-	public List<Rezervacija> listaRezervacijaZaSto(int id, Date poc, Date kraj) {
+	public List<Rezervacija> listaRezervacija(Sto s) {
 		
-		return listaRezervacijaZaSto(id).stream()
+		EntityManager em = PersistenceUtil.getEntityManager();
+		List<Rezervacija> rezervacije = s.getRezervacije();
+		
+		em.close();
+		
+		return rezervacije;
+	}
+	
+	
+	public Sto pronadjiSto(int idSto) {
+		
+		EntityManager em = PersistenceUtil.getEntityManager();
+		Sto s = em.find(Sto.class, idSto);
+		
+		em.close();
+		
+		return s;
+	}
+	
+	
+	public List<Rezervacija> listaRezervacijaZaSto(int idSto, Date poc, Date kraj) {
+		
+		EntityManager em = PersistenceUtil.getEntityManager();
+		Sto s = em.find(Sto.class, idSto);
+		
+		return s.getRezervacije().stream()
 				.filter(r -> r.getDatRez().compareTo(poc) >= 0 && r.getDatRez().compareTo(kraj) < 0)
 				.collect(Collectors.toList());
 	}

@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,7 +42,7 @@ public class Rezervacija implements Serializable {
 	private Klijent klijent;
 
 	//bi-directional many-to-one association to Sto
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="idSto")
 	private Sto sto;
 

@@ -178,6 +178,17 @@ public class KlijentCrud {
 	}
 
 	
+	public List<Rezervacija> listaRezervacijaZaKlijentaZaDan(Klijent k, LocalDate date) {
+		
+		if (k != null)
+			return k.getRezervacije().stream()
+					.filter(r -> DateConverter.convertToLocalDateViaInstant(r.getDatRez()).equals(date))
+					.collect(Collectors.toList());
+		
+		return null;
+	}
+
+	
 	public List<Rezervacija> listaRezervacijaZaKlijentaZaDan(String ime, String pass, LocalDate date) {
 		
 		Klijent k = pronadjiKlijenta(ime, pass);
