@@ -11,11 +11,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 
+import crud.RezervacijaCrud;
 import crud.StoCrud;
+import model.Klijent;
 import model.Sto;
+import utils.DateConverter;
 
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -48,7 +52,11 @@ public class RezervacijaForma extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final JPanel frmRezervacija = new JPanel();
-
+	private JTextField tfOpis;
+	private JComboBox<Date> combo;
+	private JComboBox<Sto> sto;
+	private Klijent k;
+	private RezervacijaCrud rc = new RezervacijaCrud();
 	/**
 	 * Launch the application.
 	 */
@@ -56,7 +64,8 @@ public class RezervacijaForma extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public RezervacijaForma() {
+	public RezervacijaForma(Klijent k) {
+		this.k = k;
 		setTitle("Nova rezervacija");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -76,7 +85,7 @@ public class RezervacijaForma extends JDialog {
 		 StoCrud sc = new StoCrud();
 		 List<Sto> stolovi = sc.listaStolova();
 		{
-			JComboBox<Sto> sto = new JComboBox<Sto>();
+			sto = new JComboBox<Sto>();
 			for(Sto s: stolovi) {
 					sto.addItem(s);
 			}
@@ -84,7 +93,7 @@ public class RezervacijaForma extends JDialog {
 			frmRezervacija.add(sto);
 		}
 		
-		JComboBox<Date> combo = new JComboBox<Date>();
+		combo = new JComboBox<Date>();
 		GregorianCalendar calendar = new GregorianCalendar();
         combo.addItem( calendar.getTime() );
         int j = 1;
@@ -97,11 +106,40 @@ public class RezervacijaForma extends JDialog {
 		combo.setBounds(198, 108, 154, 24);
 		frmRezervacija.add(combo);
 		{
+			JLabel lblUnesiOpis = new JLabel("Unesi opis:");
+			lblUnesiOpis.setBounds(74, 179, 103, 15);
+			frmRezervacija.add(lblUnesiOpis);
+		}
+		{
+			tfOpis = new JTextField();
+			tfOpis.setBounds(200, 172, 152, 29);
+			frmRezervacija.add(tfOpis);
+			tfOpis.setColumns(10);
+		}
+		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton btnRezervisi = new JButton("Rezerviši");
+				btnRezervisi.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						Sto s = (Sto) sto.getSelectedItem();
+						Date d = (Date) combo.getSelectedItem();
+						LocalDate l0 = DateConverter.convertToLocalDateViaInstant(d);
+						d = DateConverter.convertToDateViaInstant(l0);
+						System.out.println("Format: " + d);
+						String opis = tfOpis.getText();
+						if(rc.dodajRezervaciju(k, l0, s, opis)) {
+							Poruka poruka = new Poruka(frmRezervacija, "Uspešno ste rezervisali sto", 1, false);
+							poruka.prikazi();
+						}else {
+							Poruka poruka = new Poruka(frmRezervacija, "Neuspešna rezervacija, sto je rezervisan.", 1, true);
+							poruka.prikazi();
+						}
+						
+					}
+				});
 				btnRezervisi.setActionCommand("OK");
 				buttonPane.add(btnRezervisi);
 				getRootPane().setDefaultButton(btnRezervisi);

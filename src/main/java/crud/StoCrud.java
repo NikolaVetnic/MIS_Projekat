@@ -1,17 +1,52 @@
 package crud;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import model.Rezervacija;
 import model.Sto;
+import utils.DateConverter;
 import utils.PersistenceUtil;
 
 public class StoCrud {
+	
+	public Rezervacija listaRezervacija(Sto s, LocalDate d) {
 
+		 
+
+		 EntityManager em = PersistenceUtil.getEntityManager();
+
+		 
+
+		 String query = "select r from Rezervacija r where r.sto = :sX";
+
+		 Query q = em.createQuery(query);
+
+		 q.setParameter("sX", s);
+
+		 
+
+		 List<Rezervacija> list = q.getResultList();
+
+		 
+
+		 em.close();
+
+		 
+
+		 return list.stream()
+
+		 .filter(r -> DateConverter.convertToLocalDateViaInstant(r.getDatRez()).equals(d))
+
+		 .findFirst().orElse(null);
+
+		}
+	
 	
 	@SuppressWarnings("unchecked")
 	public List<Sto> listaStolova() {
@@ -44,17 +79,6 @@ public class StoCrud {
 		em.close();
 		
 		return sto.getRezervacije();
-	}
-	
-	
-	public List<Rezervacija> listaRezervacija(Sto s) {
-		
-		EntityManager em = PersistenceUtil.getEntityManager();
-		List<Rezervacija> rezervacije = s.getRezervacije();
-		
-		em.close();
-		
-		return rezervacije;
 	}
 	
 	

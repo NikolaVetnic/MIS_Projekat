@@ -38,7 +38,7 @@ public class Main2 {
 		
 		rc.dodajRezervaciju(k, LocalDate.of(2021, 6, 2), s, "OPIS2");
 		
-		List<Rezervacija> rez = stoCrud.listaRezervacija(s);
-		System.out.println(rez);
+		//List<Rezervacija> rez = stoCrud.listaRezervacija(s);
+		//System.out.println(rez);
 	}
 }

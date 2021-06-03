@@ -115,7 +115,7 @@ public class KlijentForma {
 		JButton btnRezervacija = new JButton("Nova rezervacija");
 		btnRezervacija.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				RezervacijaForma rf = new RezervacijaForma();
+				RezervacijaForma rf = new RezervacijaForma(klijent);
 				rf.setVisible(true);
 			}
 		});

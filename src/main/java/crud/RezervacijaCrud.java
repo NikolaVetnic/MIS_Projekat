@@ -1,6 +1,8 @@
 package crud;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -15,44 +17,45 @@ import utils.PersistenceUtil;
 public class RezervacijaCrud {
 	
 	
-	public void dodajRezervaciju(Klijent k, LocalDate d, Sto s, String opis) {
-		
+	public boolean dodajRezervaciju(Klijent k, LocalDate d, Sto s, String opis) {
 		StoCrud stoCrud = new StoCrud();
-		List<Rezervacija> rez = stoCrud.listaRezervacija(s);
-		
-		if (rez != null || rez.size() != 0) {
-			
-			System.err.println("!! Sto ZAUZET...");
-			return;
+		Rezervacija rez = stoCrud.listaRezervacija(s, d);
+		boolean ok;
+		if(rez == null) {
+			ok = true;
+		} else {
+			ok = false;
 		}
+		if (ok) {	
+			EntityManager em = PersistenceUtil.getEntityManager();
+			EntityTransaction et = null;
 		
-		EntityManager em = PersistenceUtil.getEntityManager();
-		EntityTransaction et = null;
-		
-		try {
-			
-			Rezervacija r = new Rezervacija();
-			r.setKlijent(k);
-			r.setDatRez(DateConverter.convertToDateViaInstant(d));
-			r.setSto(s);
-			r.setOpisRez(opis);
-			
-			et = em.getTransaction();
-			et.begin();
-			
-			em.persist(r);
-			
-			em.flush();
-			et.commit();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			
-			if (et != null)
-				et.rollback();
-		} finally {
-			if (em != null)
-				em.close();
+			try {
+				
+				Rezervacija r = new Rezervacija();
+				r.setKlijent(k);
+				r.setDatRez(DateConverter.convertToDateViaInstant(d));
+				r.setSto(s);
+				r.setOpisRez(opis);
+				
+				et = em.getTransaction();
+				et.begin();
+				
+				em.persist(r);
+				
+				em.flush();
+				et.commit();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				
+				if (et != null)
+					et.rollback();
+			} finally {
+				if (em != null)
+					em.close();
+			}
 		}
+		return ok;
 	}
 }
