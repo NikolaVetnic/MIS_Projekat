@@ -17,35 +17,60 @@ import utils.PersistenceUtil;
 public class KlijentCrud {
 	
 	
-	public void dodajKlijenta(Klijent k) {
+	public boolean dodajKlijenta(Klijent k) {
 		
-		EntityManager em = PersistenceUtil.getEntityManager();
-		EntityTransaction et = null;
-		
-		try {
+		boolean ok;
+		Klijent postojeci = nadjiKlijenta(k.getEmailKli());
+		if(postojeci == null)
+			ok = true;
+		else
+			ok = false;
+		if(ok) {
+			EntityManager em = PersistenceUtil.getEntityManager();
+			EntityTransaction et = null;
 			
-			et = em.getTransaction();
-			et.begin();
-			
-			em.persist(k);
-			em.flush();
-			
-			et.commit();
-			
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-			
-			if (et != null)
-				et.rollback();
-			
-		} finally {
-			
-			if (em != null)
-				em.close();
+			try {
+				
+				et = em.getTransaction();
+				et.begin();
+				
+				em.persist(k);
+				em.flush();
+				
+				et.commit();
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+				
+				if (et != null)
+					et.rollback();
+				
+			} finally {
+				
+				if (em != null)
+					em.close();
+			}
 		}
+		return ok;
 	}
 	
+	public Klijent nadjiKlijenta(String email) {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		
+		Query q = em.createQuery("select k from Klijent k where k.emailKli=:email");
+		q.setParameter("email", email);
+		Klijent k;
+        @SuppressWarnings("unchecked")
+		List<Klijent> klijenti = q.getResultList();
+        if(klijenti.isEmpty())
+        	k = null;
+        else
+        	k = klijenti.get(0);
+	    em.close();
+	        
+	    return k;
+	}
 	
 	public boolean promeniIme(Klijent k, String novoIme) {
 		return promeni(k, novoIme, KlijentFields.IME);
@@ -95,7 +120,7 @@ public class KlijentCrud {
 				case IME:		tmp.setImeKli(val);		break;
 				case PREZIME:	tmp.setPrzKli(val);		break;
 				case ADRESA:	tmp.setAdrKli(val);		break;
-				case TELEFON:	tmp.setEmailKli(val);	break;
+				case TELEFON:	tmp.setTelKli(val);	break;
 				case EMAIL:		tmp.setEmailKli(val);	break;
 				case PASS:		tmp.setPassKli(val);	break;
 				default:	

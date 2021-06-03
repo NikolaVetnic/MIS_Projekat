@@ -138,16 +138,54 @@ public class MenadzerForma {
 		GridBagLayout gbl_panel_8 = new GridBagLayout();
 		gbl_panel_8.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
 		gbl_panel_8.rowHeights = new int[]{0, 0, 0, 0};
-		gbl_panel_8.columnWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel_8.rowWeights = new double[]{1.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_panel_8.columnWeights = new double[]{};
+		gbl_panel_8.rowWeights = new double[]{};
 		panel_8.setLayout(gbl_panel_8);
 		
-		JButton btnObradanarudzbina = new JButton("obradaNarudžbina");
+		JButton btnObradaPorudzbina = new JButton("obradaPorudžbina");
+		btnObradaPorudzbina.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Poruka poruka = new Poruka(frmMenadzer, "Nije implementirano", 1, true);
+				poruka.prikazi();
+			}
+		});
 		GridBagConstraints gbc_btnObradanarudzbina = new GridBagConstraints();
 		gbc_btnObradanarudzbina.insets = new Insets(0, 0, 5, 5);
 		gbc_btnObradanarudzbina.gridx = 2;
 		gbc_btnObradanarudzbina.gridy = 1;
-		panel_8.add(btnObradanarudzbina, gbc_btnObradanarudzbina);
+		panel_8.add(btnObradaPorudzbina, gbc_btnObradanarudzbina);
+		
+		JPanel panel_3 = new JPanel();
+		tabbedPane.addTab("Nabavke", null, panel_3, null);
+		panel_3.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblNabavke = new JLabel("Nabavke");
+		lblNabavke.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblNabavke.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_3.add(lblNabavke, BorderLayout.NORTH);
+		
+		JPanel panel_9 = new JPanel();
+		panel_3.add(panel_9, BorderLayout.CENTER);
+		GridBagLayout gbl_panel_9 = new GridBagLayout();
+		gbl_panel_9.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
+		gbl_panel_9.rowHeights = new int[]{0, 0, 0, 0};
+		gbl_panel_9.columnWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_panel_9.rowWeights = new double[]{1.0, 0.0, 1.0, Double.MIN_VALUE};
+		panel_9.setLayout(gbl_panel_9);
+		
+		JButton btnNabavka = new JButton("Nova nabavka");
+		btnNabavka.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Poruka poruka = new Poruka(frmMenadzer, "Nije implementirano", 1, true);
+				poruka.prikazi();
+			}
+		});
+		
+		GridBagConstraints gbc_btnNovaNabavka = new GridBagConstraints();
+		gbc_btnNovaNabavka.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNovaNabavka.gridx = 2;
+		gbc_btnNovaNabavka.gridy = 1;
+		panel_9.add(btnNabavka, gbc_btnNovaNabavka);
 	}
 	
 	public static void zatvori() {

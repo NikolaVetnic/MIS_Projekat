@@ -149,8 +149,8 @@ public class KlijentForma {
 		JButton btnNarudzbina = new JButton("Nova narudžbina");
 		btnNarudzbina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				NarudzbinaForma nf = new NarudzbinaForma();
-				nf.setVisible(true);
+				Poruka poruka = new Poruka(frmKlijent, "Nije implementirano", 1, true);
+				poruka.prikazi();
 			}
 		});
 		

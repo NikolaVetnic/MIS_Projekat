@@ -12,8 +12,11 @@ import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -126,6 +129,31 @@ public class KlijentLoginForma{
 		JLabel lblLozinka = new JLabel("Lozinka");
 		lblLozinka.setBounds(534, 309, 70, 15);
 		panel_1.add(lblLozinka);
+		
+		JLabel lblRegistracija = new JLabel("Nova registracija");
+		lblRegistracija.setForeground(Color.BLUE.darker());
+		lblRegistracija.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblRegistracija.setBounds(577, 408, 140, 15);
+		panel_1.add(lblRegistracija);
+		
+		lblRegistracija.addMouseListener(new MouseAdapter() {
+			 
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		    	RegistracijaForma registracija = new RegistracijaForma();
+		    	registracija.setVisible(true);
+		    }
+		 
+		    @Override
+		    public void mouseEntered(MouseEvent e) {
+		        // the mouse has entered the label
+		    }
+		 
+		    @Override
+		    public void mouseExited(MouseEvent e) {
+		        // the mouse has exited the label
+		    }
+		});
 	}
 	
 	public static void otvori() {
