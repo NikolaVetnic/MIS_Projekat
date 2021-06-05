@@ -24,7 +24,7 @@ public class Poruka extends JDialog {
 		super.getContentPane().add(lbl);
 		super.setSize(lbl.getPreferredSize().width + 100, 75);
 		super.setLocationRelativeTo(forma);
-		new Nit(this, sekunde * 1000).start();
+		new Nit(this, sekunde * 10000).start();
 	}
 	
 	public Poruka(JDialog dijalog, String poruka, int sekunde, boolean greska) {
@@ -39,7 +39,7 @@ public class Poruka extends JDialog {
 		super.getContentPane().add(lbl);
 		super.setSize(lbl.getPreferredSize().width + 100, 75);
 		super.setLocationRelativeTo(dijalog);
-		new Nit(this, sekunde * 1000).start();
+		new Nit(this, sekunde * 10000).start();
 	}
 	
 	public Poruka(JPanel panel, String poruka, int sekunde, boolean greska) {
@@ -54,7 +54,7 @@ public class Poruka extends JDialog {
 		super.getContentPane().add(lbl);
 		super.setSize(lbl.getPreferredSize().width + 100, 75);
 		super.setLocationRelativeTo(panel);
-		new Nit(this, sekunde * 1000).start();
+		new Nit(this, sekunde * 10000).start();
 	}
 	
 	public void prikazi() {
