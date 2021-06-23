@@ -14,6 +14,7 @@ Istorija izmena:
 - 20210528 uradjeni dijagrami klasa, sekvenci i paketa, dodate ekranske forme za radnike i zapoceta implementacija funkcionalnosti online rezervacije stola
 - 20210601 seminarski rad uradjen do dela prikaza implementacije
 - 20210602 izbacen ID iz toString() metoda, dodate provere za rezervacije u KlijentCrud
+- 20210622 seminarski rad ocenjen sa 19/20 bodova
 
 Uputstva:
 
