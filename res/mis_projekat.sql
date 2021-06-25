@@ -555,8 +555,8 @@ INSERT INTO Klijent (idKli, imeKli, przKli, adrKli, telKli, emailKli, passKli)
 VALUES (2, "Dzemadan", "Dzailovic", "Primorska 12, 21000 Klisa", "061234234", "dzemadan.dzemi@hotmail.com", "Dzemadan");
 
 SELECT * FROM Klijent ORDER BY idKli ASC;
--- UPDATE Klijent set passKli="12345" where idKli = 1;
--- DELETE FROM Klijent WHERE idKli = 4;
+UPDATE Klijent set passKli="12345" where idKli = 1;
+DELETE FROM Klijent WHERE idKli = 1;
 
 # Rezervacija, popunjavanje...
 INSERT INTO Rezervacija (idRez, datRez, opisRez, idSto, idKli) 
@@ -567,6 +567,8 @@ VALUES (2, "2021-06-01", "Za jarana", 2, 2);
 SELECT r.idRez AS "ID", r.datRez AS "Datum", r.opisRez AS "Opis", r.idSto AS "Sto", k.imeKli AS "Klijent"
 FROM Rezervacija r, Klijent k
 WHERE r.idKli = k.idKli;
+
+delete from rezervacija where idRez = 10;
 
 # Komentar, popunjavanje...
 INSERT INTO Komentar (idKom, datKom, txtKom, idKli, idArt)
